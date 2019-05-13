@@ -23,10 +23,12 @@ function start () {
         if (err) throw err
         for (var i = 0; i < res.length; i++) {
         console.log(`
-        --------------------------------------------------------------------------------------------------
-        SKU: ${res[i].sku} | NAME: ${res[i].product_name} | DEPARTMENT: ${res[i].department_name} | PRICE: ${res[i].price} | STOCK: ${res[i].stock_quantity}
-        --------------------------------------------------------------------------------------------------
-        `)}
+        ----------------------------------------------
+        | SKU: ${res[i].sku}
+        | NAME: ${res[i].product_name}
+        | DEPARTMENT: ${res[i].department_name}
+        | PRICE: $${res[i].price}
+        | STOCK: ${res[i].stock_quantity}`)}
 })
         connection.end()
 }
