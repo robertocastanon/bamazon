@@ -1,6 +1,8 @@
 var mysql = require('mysql')
 var inquirer = require('inquirer')
 
+// var printValue = connection.query('SELECT * FROM products')
+
 var connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
@@ -12,13 +14,19 @@ var connection = mysql.createConnection({
 connection.connect(function (err) {
     if (err) throw err
     console.log(`connected as id ${connection.threadId}`)
-    readProducts()
+    start()
 })
 
-function readProducts () {
-    console.log('Slecting all products from Bamazon!..')
-    connection.query('SELECT * FROM products', function (err,res) {
-        console.log(res)
+function start () {
+    console.log('Selecting all products from Bamazon!..')
+    connection.query('SELECT * FROM products', function (err, res) {
+        if (err) throw err
+        for (var i = 0; i < res.length; i++) {
+        console.log(`
+        --------------------------------------------------------------------------------------------------
+        SKU: ${res[i].sku} | NAME: ${res[i].product_name} | DEPARTMENT: ${res[i].department_name} | PRICE: ${res[i].price} | STOCK: ${res[i].stock_quantity}
+        --------------------------------------------------------------------------------------------------
+        `)}
+})
         connection.end()
-    })
 }
