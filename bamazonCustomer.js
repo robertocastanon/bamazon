@@ -1,5 +1,6 @@
 var mysql = require('mysql')
 var inquirer = require('inquirer')
+var Table = require('cli-table')
 
 // var printValue = connection.query('SELECT * FROM products')
 
@@ -22,8 +23,7 @@ function start () {
     connection.query('SELECT * FROM products', function (err, res) {
         if (err) throw err
         for (var i = 0; i < res.length; i++) {
-        console.log(`
-        ----------------------------------------------
+        console.log(`----------------------------------------------
         | SKU: ${res[i].sku}
         | NAME: ${res[i].product_name}
         | DEPARTMENT: ${res[i].department_name}
