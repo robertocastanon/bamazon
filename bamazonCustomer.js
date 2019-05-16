@@ -56,10 +56,36 @@ function start () {
         }
     ])
     .then(answer => {
-
+        var product = res[(answer.sku_pick - 1)];
+        var num = answer.amount
+// if theres not enough stock for your request then log and redisplay the table
+        if (num > product.stock_quantity) {
+            console.log('Insufficient quantity!')
+            start()
+        }
+        else {
+            var newNum = parseInt((product.stock_quantity - num));
+            connection.query('UPDATE products SET ? WHERE ?',
+            [
+                {
+                    stock_quantity: newNum
+                },
+                {
+                    sku: product.sku
+                }
+            ],
+            function (error) {
+            var total = (num * product.price);
+            console.log("Item Purchased!")
+            console.log(`Your total cost is: $${total}.`)
+            start()
+            }
+            )
+    
+        }
 
     })
 
 });
-connection.end()
+// connection.end()
 };
