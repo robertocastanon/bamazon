@@ -19,7 +19,7 @@ INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("Mortal Kombat 11", "Video Games", 59.99, 500);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Spider-Man 2", "Movies & TV", 24.99, 455);
+VALUES ("Spider-Man: Into the Spider-Verse", "Movies & TV", 24.99, 455);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("ASUS VivoBook F510UA 15.6", "Electronics", 588, 780);

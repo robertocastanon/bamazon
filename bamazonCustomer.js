@@ -2,6 +2,14 @@ var mysql = require('mysql')
 var inquirer = require('inquirer')
 var Table = require('cli-table');
  
+var connection = mysql.createConnection({
+    host: 'localhost',
+    port: 3306,
+    user: 'nodeUser',
+    password: '',
+    database: 'bamazon'
+});
+
 // instantiate
 var table = new Table({
     head: [
@@ -12,16 +20,6 @@ var table = new Table({
         'STOCK',
     ]
 });
-
-// var printValue = connection.query('SELECT * FROM products')
-
-var connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'nodeUser',
-    password: '',
-    database: 'bamazon'
-})
 
 connection.connect(function (err) {
     if (err) throw err
@@ -35,14 +33,25 @@ function start () {
     connection.query('SELECT * FROM products', function (err, res) {
         if (err) throw err
         for (var i = 0; i < res.length; i++) {
-
         table.push(
             [res[i].sku, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity,]
         )};
-        
-        console.log(table.toString());
-        
-        
-})
-        connection.end()
+    console.log(table.toString());
+    q1()
+})  
+};
+
+function q1 () {
+    inquirer.prompt([
+        {
+            name: 'sku_pick',
+            type: 'input',
+            message: 'Input the SKU number of the product you would like to purchase'
+        }
+    ])
+    .then(answers => {
+
+    })
+connection.end()
 }
+//NOTE TO SELF... maybe make the inquirer in another function then mix it together later if needed
