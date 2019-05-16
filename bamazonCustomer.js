@@ -37,11 +37,7 @@ function start () {
             [res[i].sku, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity,]
         )};
     console.log(table.toString());
-    q1()
-})  
-};
 
-function q1 () {
     inquirer.prompt([
         {
             name: 'sku_pick',
@@ -52,6 +48,7 @@ function q1 () {
     .then(answers => {
 
     })
+
+});
 connection.end()
-}
-//NOTE TO SELF... maybe make the inquirer in another function then mix it together later if needed
+};
