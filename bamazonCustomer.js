@@ -33,9 +33,14 @@ function start () {
     connection.query('SELECT * FROM products', function (err, res) {
         if (err) throw err
         for (var i = 0; i < res.length; i++) {
-        table.push(
-            [res[i].sku, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity,]
-        )};
+        table.push([
+            res[i].sku,
+            res[i].product_name,
+            res[i].department_name,
+            res[i].price,
+            res[i].stock_quantity,
+            ])
+        };
     console.log(table.toString());
 
     inquirer.prompt([
@@ -43,9 +48,15 @@ function start () {
             name: 'sku_pick',
             type: 'input',
             message: 'Input the SKU number of the product you would like to purchase'
+        },
+        {
+            name: 'amount',
+            type: 'input',
+            message: 'How much would you like to buy?'
         }
     ])
-    .then(answers => {
+    .then(answer => {
+
 
     })
 
