@@ -26,3 +26,6 @@ VALUES ("ASUS VivoBook F510UA 15.6", "Electronics", 588, 780);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("1984 By George Orwell", "Books", 7.79, 340);
+
+INSERT INTO products (product_name, department_name, price, stock_quantity)
+VALUES ("Google Pixle 3a", "Electronics", 400, 0);
