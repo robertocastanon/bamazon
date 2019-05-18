@@ -22,7 +22,7 @@ var updatedTable = new Table({
 
 connection.connect(function(err) {
   if (err) throw err;
-  console.log(`connected as id ${connection.threadId}`);
+  console.log(`connected as customer ${connection.threadId}`);
 
   start();
 });
@@ -36,7 +36,7 @@ function start() {
         res[i].sku,
         res[i].product_name,
         res[i].department_name,
-        res[i].price,
+        `$${res[i].price}`,
         res[i].stock_quantity
       ]);
     }
@@ -62,8 +62,8 @@ function start() {
         // if theres not enough stock for your request then log and redisplay the table
         if (num > product.stock_quantity) {
           console.log("Insufficient quantity!");
-          console.log("Updating Bamazon...");
-          update();
+          console.log("SHUTTING DOWN Bamazon...");
+          connection.end()
 
         } else {
           var newNum = parseInt(product.stock_quantity - num);
@@ -82,8 +82,6 @@ function start() {
               var total = num * product.price;
               console.log("Item(s) Purchased!");
               console.log(`Your total cost is: $${total}.`);
-              console.log("UPDATING Bamazon...");
-              
               update()
 
 
@@ -102,16 +100,14 @@ function update() {
         res[i].sku,
         res[i].product_name,
         res[i].department_name,
-        res[i].price,
+        `$${res[i].price}`,
         res[i].stock_quantity
       ]);
     }
+    console.log("UPDATING Bamazon...");    
     console.log(updatedTable.toString());
     console.log("SHUTTING DOWN Bamazon...");
-
     connection.end()
 
 }
   )};
-
-// connection.end()
