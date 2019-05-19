@@ -13,19 +13,14 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Apple Watch Series 4", "Electronics", 379, 890);
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Mortal Kombat 11", "Video Games", 59.99, 500);
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Spider-Man: Into the Spider-Verse", "Movies & TV", 24.99, 455);
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("ASUS VivoBook F510UA 15.6", "Electronics", 588, 780);
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("1984 By George Orwell", "Books", 7.79, 340);
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("Google Pixle 3a", "Electronics", 400, 0);
+VALUES 
+ ("Apple Watch Series 4", "Electronics", 385.00, 89),
+ ("Mortal Kombat 11", "Video Games", 69.75, 3),
+ ("Spider-Man: Into the Spider-Verse", "Movies & TV", 24.25, 45),
+ ("ASUS VivoBook F510UA 15.6", "Electronics", 590.50, 80),
+ ("1984 By George Orwell", "Books", 7.75, 34),
+ ("Google Pixle 3a", "Electronics", 395.75, 0),
+ ("Hydro Flask Water Bottle", "Sports", 45.00, 5),
+ ("BamazonBasics Luggage", "Travel Gear", 50.35, 15),
+ ("Portable Hot Tub", "Outdoor", 405.00, 3),
+ ("John Wick", "Movies & TV", 9.95, 42);
