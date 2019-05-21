@@ -54,8 +54,7 @@ function start() { // display the table, two prompts amonut and total cost of pu
         { // first inquirer prompt, that asks the user to provide the sku of the product they want to buy
           name: "sku_pick",
           type: "input",
-          message:
-            "Input the SKU number of the product you would like to purchase" 
+          message: "Input the SKU number of the product you would like to purchase" 
         },
         { // second prompt, that asks the user to provide how much they want to purchase
           name: "amount_pick",
