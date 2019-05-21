@@ -23,13 +23,13 @@ To start Bamazon type '**node bamazonCustomer.js**' into the command line.
 
 * Following that it will log 'Selecting all products from Bamazon!...'
 
-![start log](./images/start-log.png)
+![start log](./images/start-log.PNG)
 
 Then the table using [cli-table](https://www.npmjs.com/package/cli-table) will display showing 10 products. Each product has 10 descriptors, the sku number, product name, department name, price and the stock quantity.
 
 Following this the first qustion will appearing asking you to provide the sku number of a product to select it. From 1 to 10.
 
-![start table](./images/start-table.png)
+![start table](./images/start-table.PNG)
 
 For this example we'll select SKU number **5**, which is **1984 By George Orwell**.
 
@@ -37,7 +37,7 @@ For this example we'll select SKU number **5**, which is **1984 By George Orwell
 
 After enterting the SKU number of the product you would like to buy press enter and it will save your response and display the next question.
 
-![question](./images/q.png)
+![question](./images/q.PNG)
 
 We'll buy two copies of product 5. Following this many actions will occur.
 
@@ -49,12 +49,12 @@ We'll buy two copies of product 5. Following this many actions will occur.
 
 * Afterwards it will display 'UPDATING Bamazon...'
 
-![purchase](./images/purchase.png)
+![purchase](./images/purchase.PNG)
 
 
 After the logs an upated table will display and a final log 'SHUTTING DOWN Bamazon' which indicates that it will end the connection.
 
-![purchase](./images/end.png)
+![purchase](./images/end.PNG)
 
 Notice how the STOCK number for product 5 went down from 32 to 30. This updates the database itself.
 
